@@ -1,0 +1,64 @@
+<table id='employee-table' class="styled-table">
+  <thead  class="thead-light">
+    <tr>
+      <th>User Id</th>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @user_lists.present? %>
+      <% @user_lists.each do |user| %>
+      <tr>
+        <td><%= user["userId"] %></td>
+        <td><%= user["id"] %></td>
+        <td><%= user["title"] %></td>
+        <td><%= user["body"] %></td>
+      </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5" style="text-align: center; "><b>There is no proper Url/User List</b></td>
+      </tr>
+    <% end %>
+      
+  </tbody>
+</table>
+<br>
+<style type="text/css">
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .styled-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+  }
+
+  .styled-table th,
+  .styled-table td {
+      padding: 12px 15px;
+  }
+  .styled-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+  }
+
+  .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+  }
+
+  .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+  }
+  .styled-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+  }
+</style>
